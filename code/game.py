@@ -3,6 +3,7 @@
 
 import pygame
 
+from code.const import WIN_WIDTH, WIN_HEIGHT
 from code.menu import Menu
 
 
@@ -11,9 +12,12 @@ class Game:
 
         pygame.init()
 
-        self.window = pygame.display.set_mode(size=(600, 480))
+        self.window = pygame.display.set_mode(size=(WIN_WIDTH , WIN_HEIGHT ))
 
     def run(self):
+        pygame.mixer_music.load('./asset/Menu.mp3')
+        pygame.mixer_music.play(-1)
+
 
         while True:
 
@@ -21,11 +25,7 @@ class Game:
             menu = Menu(self.window)
             menu.run()
             pass
-            # check for all events
-            #for event in pygame.event.get():
-               # if event.type == pygame.QUIT:
-                #    pygame.quit()  # close window
-                 #   quit()  # end pygame
+
 
 
 
