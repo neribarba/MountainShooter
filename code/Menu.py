@@ -12,7 +12,7 @@ from code.Const import WIN_WIDTH, MENU_OPTION, COLOR_BLACK, COLOR_YELLOW
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load('./asset/MenuBg.png')
+        self.surf = pygame.image.load('./asset/MenuBg.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
@@ -22,7 +22,7 @@ class Menu:
         pygame.mixer_music.play(-1)
         while True: # DRAW IMAGE
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, 'Space', COLOR_BLACK, ((WIN_WIDTH / 2), 70))
+            self.menu_text(50, 'Alien', COLOR_BLACK, ((WIN_WIDTH / 2), 70))
             self.menu_text(50, 'Peaks', COLOR_BLACK, ((WIN_WIDTH / 2), 120))
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
@@ -46,8 +46,9 @@ class Menu:
                             menu_option -= 1
                         else:
                             menu_option = len(MENU_OPTION) - 1
-                    if event.key == pygame.K_RETURN: # KEY RETURN (ENTER)
+                    if event.key == pygame.K_RETURN:# KEY RETURN (ENTER)
                             return MENU_OPTION[menu_option]
+
 
 
 
