@@ -3,6 +3,7 @@ import pygame
 COLOR_BLACK = (0, 0, 0)
 COLOR_YELLOW = (255, 255, 0)
 COLOR_WHITE = (255, 255, 255)
+
 # H
 ENTITY_HEALTH = {
     'level1Bg0': 999,
@@ -12,11 +13,22 @@ ENTITY_HEALTH = {
     'level1Bg4': 999,
     'level1Bg5': 999,
     'level1Bg6': 999,
-    'Player1': 5,
-    'Player2': 5,
+    'Player1': 300,
+    'Player1shot': 1,
+    'Player2': 300,
+    'Player2shot': 1,
     'Enemy1': 50,
-    'Enemy2': 60
+    'Enemy1shot': 1,
+    'Enemy2': 60,
+    'Enemy2shot': 1,
 }
+ENTITY_SHOT_DELAY = {
+    'Player1': 22,
+    'Player2': 16,
+    'Enemy1': 30,
+    'Enemy2': 40,
+}
+
 # M
 MENU_OPTION = ('NEW GAME 1P',
                'NEW GAME 2P - COOPERATIVE',
@@ -52,7 +64,11 @@ ENTITY_SPEED = {
     'level1Bg5': 5,
     'level1Bg6': 6,
     'Player1': 4,
+    'Player1shot': 2,
     'Player2': 4,
-    'Enemy1': 3,
-    'Enemy2': 2,
+    'Player2shot': 2,
+    'Enemy1': 1,
+    'Enemy1shot': 3,
+    'Enemy2': 1,
+    'Enemy2shot': 3,
 }
