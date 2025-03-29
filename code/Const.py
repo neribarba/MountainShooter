@@ -9,13 +9,19 @@ C_CYAN = (0, 255, 255)
 # H
 ENTITY_HEALTH = {
     'level1Bg0': 999,
-
     'level1Bg1': 999,
     'level1Bg2': 999,
     'level1Bg3': 999,
     'level1Bg4': 999,
     'level1Bg5': 999,
     'level1Bg6': 999,
+    # Adicione estas linhas abaixo:
+    'level2Bg0': 999,
+    'level2Bg1': 999,
+    'level2Bg2': 999,
+    'level2Bg3': 999,
+    'level2Bg4': 999,
+    # fim da adição
     'Player1': 300,
     'Player1shot': 1,
     'Player2': 300,
@@ -25,6 +31,7 @@ ENTITY_HEALTH = {
     'Enemy2': 60,
     'Enemy2shot': 1,
 }
+
 
 ENTITY_DAMAGE = {
     'level1Bg0': 0,
@@ -101,11 +108,16 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
 # s
 SPAWN_TIME = 4000
 
+# T
+TIMEOUT_STEP = 100 #100ms
+
+TIMEOUT_LEVEL = 20000 #20s
 # W
 WIN_WIDTH = 576
 WIN_HEIGHT = 324
 # E
 EVENT_ENEMY = pygame.USEREVENT + 1
+EVENT_TIMEOUT = pygame.USEREVENT + 2
 ENTITY_SPEED = {
     'level1Bg0': 0,
     'level1Bg1': 1,
@@ -114,6 +126,11 @@ ENTITY_SPEED = {
     'level1Bg4': 4,
     'level1Bg5': 5,
     'level1Bg6': 6,
+    'level2Bg0': 0,
+    'level2Bg1': 1,
+    'level2Bg2': 2,
+    'level2Bg3': 3,
+    'level2Bg4': 4,
     'Player1': 4,
     'Player1shot': 2,
     'Player2': 4,
