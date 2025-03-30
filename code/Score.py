@@ -1,6 +1,5 @@
 import sys
 from datetime import datetime
-from sysconfig import get_path_names
 
 import pygame
 from pygame import Surface, Rect, KEYDOWN, K_RETURN, K_BACKSPACE, K_ESCAPE
@@ -25,6 +24,8 @@ class Score:
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             self.score_text(48, 'YOU WIN!', C_YELLOW, SCORE_POS['Title'])
+            text = 'Enter Player 1 name (4 characters):'
+            score = player_score[0]
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
                 text = 'Enter player 1 name (4 characters):'
@@ -50,14 +51,12 @@ class Score:
                         return
                     elif event.key == K_BACKSPACE:
 
-
                         name = name[:-1]
                     else:
                         if len(name) < 4:
                             name += event.unicode
             self.score_text(20, name, C_GREEN, SCORE_POS['Name'])
             pygame.display.flip()
-
             pass
 
     def show(self):
@@ -82,7 +81,6 @@ class Score:
                 if event.type == KEYDOWN:
                     if event.key == K_ESCAPE:
                         return
-
             pygame.display.flip()
 
     def score_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
